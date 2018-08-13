@@ -1,0 +1,57 @@
+/* 全ての要素 */
+body{
+  /* マージンを0に */
+  margin: 0;
+  /* フォント設定 */
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', '游ゴシックMedium', meiryo, sans-serif;
+  /* フォントの色を設定 */
+  color:#2d2d2d;
+}
+/* 中央1カラムにするためのコンテナ */
+.all {
+  /* 幅900px */
+  max-width: 900px;
+  /* 中央寄せ */
+  margin: auto;
+}
+/* コンテナ内 */
+.main {
+  /* 幅コンテナ内一杯 */
+  width: 100%;
+  /* 内包する要素は中央寄せ */
+  text-align:center
+  /* 縦方向のパッディング20px、横方向のパッディング0px */ ;
+  padding:20px 0;
+}
+/* ボタンのスタイルを設定 */
+button {
+  /* 背景色 */
+  background-color:#07a907;
+  /* フォントサイズ */
+  font-size:11pt;
+  /* 枠線 */
+  border-style: none;
+  /* 幅 */
+  width:70%;
+  /* 角丸の半径 */
+  border-radius: 5px;
+  /* パディング */
+  padding: 15px 0;
+  /* 文字の色 */
+  color:#ffffff;
+}
+/* マウスが乗った時のボタンのスタイルを設定 */
+button:hover {
+  /* 背景色 */
+  background-color: #59b1eb;
+}
+/* p(テキスト)要素 */
+p {
+  /* フォントサイズの設定 */
+  font-size:14pt;
+}
+/* 画像のスタイル */
+img {
+  /* 幅 */
+  width:200px;
+}
