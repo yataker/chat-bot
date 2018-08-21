@@ -1,9 +1,9 @@
 <?php
 
-//Composerでインストールしたライブグラリを一括読み込み
-reqire_once__Dir__.'vendor/autoload.php';
+//Composer縺ｧ繧､繝ｳ繧ｹ繝医�ｼ繝ｫ縺励◆繝ｩ繧､繝悶Λ繝ｪ繧剃ｸ諡ｬ隱ｭ縺ｿ霎ｼ縺ｿ
+reqire_once__DIR__.'vendor/autoload.php';
 
-//POSTメソッドで渡される値を取得、表示
+//POST繝｡繧ｽ繝�繝峨〒貂｡縺輔ｌ縺溷､繧貞叙蠕励∬｡ｨ遉ｺ
 $inputString = file_get_contents('php://input');
 error_log($inputString);
 
