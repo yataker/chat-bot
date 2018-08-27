@@ -23,7 +23,22 @@ foreach ($events as $event) {
   //replyTextMessage($bot, $event->getReplyToken(), 'TextMessage');
 
   // 画像を返信
-  replyImageMessage($bot, $event->getReplyToken(), 'https://' . $_SERVER['HTTP_HOST'] . '/imgs/original.jpg', 'https://' . $_SERVER['HTTP_HOST'] . '/imgs/preview.jpg');
+  //replyImageMessage($bot, $event->getReplyToken(), 'https://' . $_SERVER['HTTP_HOST'] . '/imgs/original.jpg', 'https://' . $_SERVER['HTTP_HOST'] . '/imgs/preview.jpg');
+
+  // 位置情報を返信
+  replyLocationMessage($bot, $event->getReplyToken(), 'LINE', '東京都渋谷区渋谷2-21-1 ヒカリエ27階', 35.659025, 139.703473);
+
+  // スタンプを返信
+  //replyStickerMessage($bot, $event->getReplyToken(), 1, 1);
+
+  // 動画を返信
+  //replyVideoMessage($bot, $event->getReplyToken(),
+  //  'https://' . $_SERVER['HTTP_HOST'] . '/videos/sample.mp4',
+  //  'https://' . $_SERVER['HTTP_HOST'] . '/videos/sample_preview.jpg');
+
+  // オーディファイルを返信
+  //replyAudioMessage($bot, $event->getReplyToken(), 'https://' . $_SERVER['HTTP_HOST'] . '/audios/sample.m4a', 6000);
+
 
 }
 
