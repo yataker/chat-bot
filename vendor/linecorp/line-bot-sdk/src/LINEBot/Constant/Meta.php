@@ -20,5 +20,9 @@ namespace LINE\LINEBot\Constant;
 
 class Meta
 {
+<<<<<<< HEAD
     const VERSION = '3.1.0';
+=======
+    const VERSION = '3.3.0';
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
 }

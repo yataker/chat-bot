@@ -7,5 +7,9 @@ php:
   - '7.2'
 install:
   - composer update
+<<<<<<< HEAD
 script: composer test
+=======
+script: make check
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
 sudo: false

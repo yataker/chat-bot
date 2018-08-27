@@ -162,6 +162,10 @@ class BaseEvent
      * (i.e. userId, groupId or roomId).
      *
      * @return null|string
+<<<<<<< HEAD
+=======
+     * @throws InvalidEventSourceException
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
      */
     public function getEventSourceId()
     {

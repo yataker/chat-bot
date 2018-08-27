@@ -28,4 +28,8 @@ class MessageType
     const IMAGE = 'image';
     const AUDIO = 'audio';
     const VIDEO = 'video';
+<<<<<<< HEAD
+=======
+    const FLEX = 'flex';
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
 }

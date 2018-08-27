@@ -1,6 +1,7 @@
 [
     {
         "name": "linecorp/line-bot-sdk",
+<<<<<<< HEAD
         "version": "3.1.0",
         "version_normalized": "3.1.0.0",
         "source": {
@@ -15,6 +16,24 @@
             "shasum": ""
         },
         "require": {
+=======
+        "version": "3.3.0",
+        "version_normalized": "3.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/line/line-bot-sdk-php.git",
+            "reference": "1f3f4860a9146b486d211ad92224c90baf5bf130"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/line/line-bot-sdk-php/zipball/1f3f4860a9146b486d211ad92224c90baf5bf130",
+            "reference": "1f3f4860a9146b486d211ad92224c90baf5bf130",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "ext-json": "*",
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
             "php": ">=5.5"
         },
         "require-dev": {
@@ -29,7 +48,11 @@
             "apigen/apigen": "Install with roave/better-reflection:dev-master to generate docs",
             "roave/better-reflection": "Required by apigen/apigen:dev-master"
         },
+<<<<<<< HEAD
         "time": "2018-07-19T01:16:38+00:00",
+=======
+        "time": "2018-08-21T08:38:56+00:00",
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -39,16 +62,35 @@
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
+<<<<<<< HEAD
             "Apache License Version 2.0"
+=======
+            "Apache-2.0"
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
         ],
         "authors": [
             {
                 "name": "moznion",
+<<<<<<< HEAD
                 "email": "moznion@gmail.com"
             },
             {
                 "name": "Satoru Yoshihara",
                 "email": "vaduz0@gmail.com"
+=======
+                "email": "moznion@gmail.com",
+                "role": "Retired"
+            },
+            {
+                "name": "Satoru Yoshihara",
+                "email": "vaduz0@gmail.com",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Satoshi Shibuya",
+                "email": "satosby@gmail.com",
+                "role": "Maintainer"
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
             }
         ],
         "description": "SDK of the LINE BOT API for PHP",
