@@ -20,10 +20,16 @@ foreach ($events as $event) {
   //$bot->replyText($event->getReplyToken(), 'TextMessage');
   
   // テキストを返信
-  replyTextMessage($bot, $event->getReplyToken(), 'TextMessage');
+  //replyTextMessage($bot, $event->getReplyToken(), 'TextMessage');
+
+  // 画像を返信
+  replyImageMessage($bot, $event->getReplyToken(), 'https://' . $_SERVER['HTTP_HOST'] . '/imgs/original.jpg', 'https://' . $_SERVER['HTTP_HOST'] . '/imgs/preview.jpg');
 
 }
 
+
+
+//以下、Fuctionをまとめる
 // テキストを返信。引数はLINEBot、返信先、テキスト  P49
 function replyTextMessage($bot, $replyToken, $text) {
   // 返信を行いレスポンスを取得
@@ -35,5 +41,54 @@ function replyTextMessage($bot, $replyToken, $text) {
     error_log('Failed! '. $response->getHTTPStatus . ' ' . $response->getRawBody());
   }
 }
+
+// 画像を返信。引数はLINEBot、返信先、画像URL、サムネイルURL
+function replyImageMessage($bot, $replyToken, $originalImageUrl, $previewImageUrl) {
+  // ImageMessageBuilderの引数は画像URL、サムネイルURL
+  $response = $bot->replyMessage($replyToken, new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder($originalImageUrl, $previewImageUrl));
+  if (!$response->isSucceeded()) {
+    error_log('Failed!'. $response->getHTTPStatus . ' ' . $response->getRawBody());
+  }
+}
+
+// 位置情報を返信。引数はLINEBot、返信先、タイトル、住所、
+// 緯度、経度
+function replyLocationMessage($bot, $replyToken, $title, $address, $lat, $lon) {
+  // LocationMessageBuilderの引数はダイアログのタイトル、住所、緯度、経度
+  $response = $bot->replyMessage($replyToken, new \LINE\LINEBot\MessageBuilder\LocationMessageBuilder($title, $address, $lat, $lon));
+  if (!$response->isSucceeded()) {
+    error_log('Failed!'. $response->getHTTPStatus . ' ' . $response->getRawBody());
+  }
+}
+
+// スタンプを返信。引数はLINEBot、返信先、
+// スタンプのパッケージID、スタンプID
+function replyStickerMessage($bot, $replyToken, $packageId, $stickerId) {
+  // StickerMessageBuilderの引数はスタンプのパッケージID、スタンプID
+  $response = $bot->replyMessage($replyToken, new \LINE\LINEBot\MessageBuilder\StickerMessageBuilder($packageId, $stickerId));
+  if (!$response->isSucceeded()) {
+    error_log('Failed!'. $response->getHTTPStatus . ' ' . $response->getRawBody());
+  }
+}
+
+// 動画を返信。引数はLINEBot、返信先、動画URL、サムネイルURL
+function replyVideoMessage($bot, $replyToken, $originalContentUrl, $previewImageUrl) {
+  // VideoMessageBuilderの引数は動画URL、サムネイルURL
+  $response = $bot->replyMessage($replyToken, new \LINE\LINEBot\MessageBuilder\VideoMessageBuilder($originalContentUrl, $previewImageUrl));
+  if (!$response->isSucceeded()) {
+    error_log('Failed! '. $response->getHTTPStatus . ' ' . $response->getRawBody());
+  }
+}
+
+// オーディオファイルを返信。引数はLINEBot、返信先、
+// ファイルのURL、ファイルの再生時間
+function replyAudioMessage($bot, $replyToken, $originalContentUrl, $audioLength) {
+  // AudioMessageBuilderの引数はファイルのURL、ファイルの再生時間
+  $response = $bot->replyMessage($replyToken, new \LINE\LINEBot\MessageBuilder\AudioMessageBuilder($originalContentUrl, $audioLength));
+  if (!$response->isSucceeded()) {
+    error_log('Failed! '. $response->getHTTPStatus . ' ' . $response->getRawBody());
+  }
+}
+
 
 ?>
