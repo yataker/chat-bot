@@ -15,8 +15,13 @@ $events = $bot->parseEventRequest(file_get_contents('php://input'), $signature);
 
 //配列に格納された各イベントをループで処理
 foreach ($events as $event) {
+
   // テキストを返信
-  $bot->replyText($event->getReplyToken(),'TextMessage');
+  $bot->replyText($event->getReplyToken(), 'TextMessage');
+  
+  // テキストを返信
+  //replyTextMessage($bot, $event->getReplyToken(), 'TextMessage');
+
 }
 
- ?>
+?>
