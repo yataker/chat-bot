@@ -15,6 +15,12 @@ $events = $bot->parseEventRequest(file_get_contents('php://input'), $signature);
 
 //配列に格納された各イベントをループで処理
 foreach ($events as $event) {
+  // イベントがPostbackEventクラスのインスタンスであれば
+  if ($event instanceof \LINE\LINEBot\Event\PostbackEvent) {
+    // テキストを返信し次のイベントの処理へ
+    replyTextMessage($bot, $event->getReplyToken(), 'Postback受信「' . $event->getPostbackData() . '」');
+    continue;
+  }
 
   // テキストを返信
   //$bot->replyText($event->getReplyToken(), 'TextMessage');
@@ -49,7 +55,6 @@ foreach ($events as $event) {
   );
 */
 
-
   // Buttonsテンプレートメッセージを返信
   replyButtonsTemplate($bot,
     $event->getReplyToken(),
@@ -67,6 +72,7 @@ foreach ($events as $event) {
     new LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder (
       'Webで見る', 'http://google.jp')
   );
+
 
 
 }
