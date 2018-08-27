@@ -55,6 +55,7 @@ foreach ($events as $event) {
   );
 */
 
+/*
   // Buttonsテンプレートメッセージを返信
   replyButtonsTemplate($bot,
     $event->getReplyToken(),
@@ -72,7 +73,45 @@ foreach ($events as $event) {
     new LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder (
       'Webで見る', 'http://google.jp')
   );
+*/
 
+  // Confirmテンプレートメッセージを返信
+  replyConfirmTemplate($bot,
+    $event->getReplyToken(),
+    'Webで詳しく見ますか？',
+    'Webで詳しく見ますか？',
+    new LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder (
+      '見る', 'http://google.jp'),
+    new LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder (
+      '見ない', 'ignore')
+  );
+
+  /*
+  // Carouselテンプレートメッセージを返信
+  // ダイアログの配列
+  $columnArray = array();
+  for($i = 0; $i < 5; $i++) {
+    // アクションの配列
+    $actionArray = array();
+    array_push($actionArray, new LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder (
+      'ボタン' . $i . '-' . 1, 'c-' . $i . '-' . 1));
+    array_push($actionArray, new LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder (
+      'ボタン' . $i . '-' . 2, 'c-' . $i . '-' . 2));
+    array_push($actionArray, new LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder (
+      'ボタン' . $i . '-' . 3, 'c-' . $i . '-' . 3));
+    // CarouselColumnTemplateBuilderの引数はタイトル、本文、
+    // 画像URL、アクションの配列
+    $column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder (
+      ($i + 1) . '日後の天気',
+      '晴れ',
+      'https://' . $_SERVER['HTTP_HOST'] .  '/imgs/template.jpg',
+      $actionArray
+    );
+    // 配列に追加
+    array_push($columnArray, $column);
+  }
+  replyCarouselTemplate($bot, $event->getReplyToken(),'今後の天気予報', $columnArray);
+  */
 
 
 }
