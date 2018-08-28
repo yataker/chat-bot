@@ -24,7 +24,7 @@ foreach ($events as $event) {
 
   // テキストを返信
   //$bot->replyText($event->getReplyToken(), 'TextMessage');
-  
+
   // テキストを返信
   //replyTextMessage($bot, $event->getReplyToken(), 'TextMessage');
 
@@ -75,6 +75,7 @@ foreach ($events as $event) {
   );
 */
 
+/*
   // Confirmテンプレートメッセージを返信
   replyConfirmTemplate($bot,
     $event->getReplyToken(),
@@ -85,8 +86,8 @@ foreach ($events as $event) {
     new LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder (
       '見ない', 'ignore')
   );
+*/
 
-  /*
   // Carouselテンプレートメッセージを返信
   // ダイアログの配列
   $columnArray = array();
@@ -111,7 +112,6 @@ foreach ($events as $event) {
     array_push($columnArray, $column);
   }
   replyCarouselTemplate($bot, $event->getReplyToken(),'今後の天気予報', $columnArray);
-  */
 
 
 }
