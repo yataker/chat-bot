@@ -115,6 +115,7 @@ foreach ($events as $event) {
   replyCarouselTemplate($bot, $event->getReplyToken(),'今後の天気予報', $columnArray);
 */
 
+ /*
   // ユーザーから送信された画像ファイルを取得し、サーバーに保存する
   // イベントがImageMessage型であれば
   if ($event instanceof \LINE\LINEBot\Event\MessageEvent\ImageMessage) {
@@ -141,6 +142,17 @@ foreach ($events as $event) {
     // 保存したファイルのURLを返信
     replyTextMessage($bot, $event->getReplyToken(), 'http://' . $_SERVER['HTTP_HOST'] . '/' . $directory_path. '/' . $filename . '.' . $extension);
   }
+  */
+
+  // ユーザーのプロフィールを取得しメッセージを作成後返信
+  $profile = $bot->getProfile($event->getUserId())->getJSONDecodedBody();
+  $bot->replyMessage($event->getReplyToken(),
+    (new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder())
+      ->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('現在のプロフィールです。'))
+      ->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('表示名：' . $profile['displayName']))
+      ->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('画像URL：' . $profile['pictureUrl']))
+      ->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('ステータスメッセージ：' . $profile['statusMessage']))
+  );
 
 
 }
