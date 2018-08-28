@@ -1,15 +1,4 @@
 {
-<<<<<<< HEAD
-  "license": "Apache License, Version 2.0",
-  "authors": [
-    {
-      "name": "moznion",
-      "email": "moznion@gmail.com"
-    },
-    {
-      "name": "Satoru Yoshihara",
-      "email": "vaduz0@gmail.com"
-=======
   "license": "Apache-2.0",
   "authors": [
     {
@@ -26,18 +15,13 @@
       "name": "Satoshi Shibuya",
       "email": "satosby@gmail.com",
 	  "role": "Maintainer"
->>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
     }
   ],
   "require": {
     "php": ">=5.6",
     "slim/slim": "^3.5.0",
     "monolog/monolog": "^1.21.0",
-<<<<<<< HEAD
-    "linecorp/line-bot-sdk": "2.1.0"
-=======
     "linecorp/line-bot-sdk": "3.3.0"
->>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
   },
   "autoload": {
     "psr-4": {

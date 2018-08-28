@@ -24,10 +24,7 @@ class ActionType
     const POSTBACK = 'postback';
     const URI = 'uri';
     const DATETIME_PICKER = 'datetimepicker';
-<<<<<<< HEAD
-=======
     const CAMERA = 'camera';
     const CAMERA_ROLL = 'cameraRoll';
     const LOCATION = 'location';
->>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
 }

@@ -22,10 +22,7 @@ use LINE\LINEBot\Constant\MessageType;
 use LINE\LINEBot\ImagemapActionBuilder;
 use LINE\LINEBot\MessageBuilder;
 use LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder;
-<<<<<<< HEAD
-=======
 use LINE\LINEBot\QuickReplyBuilder;
->>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
 
 /**
  * A builder class for imagemap message.
@@ -36,12 +33,6 @@ class ImagemapMessageBuilder implements MessageBuilder
 {
     /** @var string */
     private $baseUrl;
-<<<<<<< HEAD
-    /** @var string */
-    private $altText;
-    /** @var BaseSizeBuilder */
-    private $baseSizeBuilder;
-=======
 
     /** @var string */
     private $altText;
@@ -49,19 +40,15 @@ class ImagemapMessageBuilder implements MessageBuilder
     /** @var BaseSizeBuilder */
     private $baseSizeBuilder;
 
->>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
     /** @var ImagemapActionBuilder[] */
     private $imagemapActionBuilders;
 
     /** @var array */
     private $message = [];
 
-<<<<<<< HEAD
-=======
     /** @var QuickReplyBuilder|null */
     private $quickReply;
 
->>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
     /**
      * ImagemapMessageBuilder constructor.
      *
@@ -69,11 +56,6 @@ class ImagemapMessageBuilder implements MessageBuilder
      * @param string $altText
      * @param BaseSizeBuilder $baseSizeBuilder
      * @param ImagemapActionBuilder[] $imagemapActionBuilders
-<<<<<<< HEAD
-     */
-    public function __construct($baseUrl, $altText, $baseSizeBuilder, array $imagemapActionBuilders)
-    {
-=======
      * @param QuickReplyBuilder|null $quickReply
      */
     public function __construct(
@@ -83,15 +65,11 @@ class ImagemapMessageBuilder implements MessageBuilder
         array $imagemapActionBuilders,
         QuickReplyBuilder $quickReply = null
     ) {
->>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
         $this->baseUrl = $baseUrl;
         $this->altText = $altText;
         $this->baseSizeBuilder = $baseSizeBuilder;
         $this->imagemapActionBuilders = $imagemapActionBuilders;
-<<<<<<< HEAD
-=======
         $this->quickReply = $quickReply;
->>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
     }
 
     /**
@@ -101,11 +79,7 @@ class ImagemapMessageBuilder implements MessageBuilder
      */
     public function buildMessage()
     {
-<<<<<<< HEAD
-        if (!empty($this->message)) {
-=======
         if (! empty($this->message)) {
->>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
             return $this->message;
         }
 
@@ -114,11 +88,7 @@ class ImagemapMessageBuilder implements MessageBuilder
             $actions[] = $builder->buildImagemapAction();
         }
 
-<<<<<<< HEAD
-        $this->message[] = [
-=======
         $imagemapMessage = [
->>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
             'type' => MessageType::IMAGEMAP,
             'baseUrl' => $this->baseUrl,
             'altText' => $this->altText,
@@ -126,15 +96,12 @@ class ImagemapMessageBuilder implements MessageBuilder
             'actions' => $actions,
         ];
 
-<<<<<<< HEAD
-=======
         if ($this->quickReply) {
             $imagemapMessage['quickReply'] = $this->quickReply->buildQuickReply();
         }
 
         $this->message[] = $imagemapMessage;
 
->>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
         return $this->message;
     }
 }

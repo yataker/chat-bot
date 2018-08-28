@@ -22,8 +22,6 @@ use LINE\LINEBot;
 use LINE\LINEBot\ImagemapActionBuilder\AreaBuilder;
 use LINE\LINEBot\ImagemapActionBuilder\ImagemapMessageActionBuilder;
 use LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder;
-<<<<<<< HEAD
-=======
 use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 use LINE\LINEBot\QuickReplyBuilder\ButtonBuilder\QuickReplyButtonBuilder;
 use LINE\LINEBot\QuickReplyBuilder\QuickReplyMessageBuilder;
@@ -31,17 +29,13 @@ use LINE\LINEBot\TemplateActionBuilder\CameraRollTemplateActionBuilder;
 use LINE\LINEBot\TemplateActionBuilder\CameraTemplateActionBuilder;
 use LINE\LINEBot\TemplateActionBuilder\DatetimePickerTemplateActionBuilder;
 use LINE\LINEBot\TemplateActionBuilder\LocationTemplateActionBuilder;
->>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
 use LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder;
 use LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder;
 use LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder;
 use LINE\LINEBot\Event\MessageEvent\TextMessage;
 use LINE\LINEBot\KitchenSink\EventHandler;
-<<<<<<< HEAD
-=======
 use LINE\LINEBot\KitchenSink\EventHandler\MessageHandler\Flex\FlexSampleRestaurant;
 use LINE\LINEBot\KitchenSink\EventHandler\MessageHandler\Flex\FlexSampleShopping;
->>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
 use LINE\LINEBot\KitchenSink\EventHandler\MessageHandler\Util\UrlBuilder;
 use LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder;
 use LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder;
@@ -171,8 +165,6 @@ class TextMessageHandler implements EventHandler
                 );
                 $this->bot->replyMessage($replyToken, $imagemapMessageBuilder);
                 break;
-<<<<<<< HEAD
-=======
             case 'restaurant':
                 $flexMessageBuilder = FlexSampleRestaurant::get();
                 $this->bot->replyMessage($replyToken, $flexMessageBuilder);
@@ -203,7 +195,6 @@ class TextMessageHandler implements EventHandler
                 $messageTemplate = new TextMessageBuilder('Text with quickReply buttons', $quickReply);
                 $this->bot->replyMessage($replyToken, $messageTemplate);
                 break;
->>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
             default:
                 $this->echoBack($replyToken, $text);
                 break;

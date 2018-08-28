@@ -20,10 +20,7 @@ namespace LINE\LINEBot\MessageBuilder;
 
 use LINE\LINEBot\Constant\MessageType;
 use LINE\LINEBot\MessageBuilder;
-<<<<<<< HEAD
-=======
 use LINE\LINEBot\QuickReplyBuilder;
->>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
 
 /**
  * A builder class for text message.
@@ -34,11 +31,6 @@ class TextMessageBuilder implements MessageBuilder
 {
     /** @var string[] */
     private $texts;
-<<<<<<< HEAD
-    /** @var array */
-    private $message = [];
-
-=======
 
     /** @var array */
     private $message = [];
@@ -46,7 +38,6 @@ class TextMessageBuilder implements MessageBuilder
     /** @var QuickReplyBuilder|null */
     private $quickReply;
 
->>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
     /**
      * TextMessageBuilder constructor.
      *
@@ -63,14 +54,6 @@ class TextMessageBuilder implements MessageBuilder
      */
     public function __construct($text, $extraTexts = null)
     {
-<<<<<<< HEAD
-        $extra = [];
-        if (!is_null($extraTexts)) {
-            $args = func_get_args();
-            $extra = array_slice($args, 1);
-        }
-        $this->texts = array_merge([$text], $extra);
-=======
         $extras = [];
         if (! is_null($extraTexts)) {
             $args = func_get_args();
@@ -86,7 +69,6 @@ class TextMessageBuilder implements MessageBuilder
             $extras = array_values($extras);
         }
         $this->texts = array_merge([$text], $extras);
->>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
     }
 
     /**
@@ -96,11 +78,7 @@ class TextMessageBuilder implements MessageBuilder
      */
     public function buildMessage()
     {
-<<<<<<< HEAD
-        if (!empty($this->message)) {
-=======
         if (! empty($this->message)) {
->>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
             return $this->message;
         }
 
@@ -111,8 +89,6 @@ class TextMessageBuilder implements MessageBuilder
             ];
         }
 
-<<<<<<< HEAD
-=======
         if ($this->quickReply) {
             $lastKey = count($this->message) - 1;
 
@@ -121,7 +97,6 @@ class TextMessageBuilder implements MessageBuilder
             $this->message[$lastKey]['quickReply'] = $this->quickReply->buildQuickReply();
         }
 
->>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
         return $this->message;
     }
 }
