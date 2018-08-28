@@ -114,7 +114,10 @@ class LINEBot
      * @param string $text Text of message.
      * @param string[]|null $extraTexts Extra text of message.
      * @return Response
+<<<<<<< HEAD
+=======
      * @throws \ReflectionException
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
      */
     public function replyText($replyToken, $text, $extraTexts = null)
     {
@@ -189,8 +192,11 @@ class LINEBot
      * @param string $body Request body.
      * @param string $signature Signature of request.
      * @return LINEBot\Event\BaseEvent[]
+<<<<<<< HEAD
+=======
      * @throws LINEBot\Exception\InvalidEventRequestException
      * @throws LINEBot\Exception\InvalidSignatureException
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
      */
     public function parseEventRequest($body, $signature)
     {
@@ -203,7 +209,10 @@ class LINEBot
      * @param string $body Request body.
      * @param string $signature Signature of request.
      * @return bool Request is valid or not.
+<<<<<<< HEAD
+=======
      * @throws LINEBot\Exception\InvalidSignatureException
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
      */
     public function validateSignature($body, $signature)
     {
@@ -281,7 +290,11 @@ class LINEBot
      *
      * @param string $groupId Identifier of the group
      * @return array memberIds
+<<<<<<< HEAD
+     * @see LINE\LINEBot\getGroupMemberIds()
+=======
      * @see \LINE\LINEBot::getGroupMemberIds()
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
      */
     public function getAllGroupMemberIds($groupId)
     {
@@ -306,7 +319,11 @@ class LINEBot
      *
      * @param string $roomId Identifier of the room
      * @return array memberIds
+<<<<<<< HEAD
+     * @see LINE\LINEBot\getRoomMemberIds()
+=======
      * @see \LINE\LINEBot::getRoomMemberIds()
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
      */
     public function getAllRoomMemberIds($roomId)
     {

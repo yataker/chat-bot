@@ -31,18 +31,28 @@ interface HTTPClient
      * Sends GET request to LINE Messaging API.
      *
      * @param string $url Request URL.
+<<<<<<< HEAD
+     * @return Response Response of API request.
+     */
+    public function get($url);
+=======
      * @param array $data Request body.
      * @param array $headers
      * @return Response Response of API request.
      */
     public function get($url, array $data = [], array $headers = []);
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
 
     /**
      * Sends POST request to LINE Messaging API.
      *
      * @param string $url Request URL.
      * @param array $data Request body.
+<<<<<<< HEAD
+     * @param array $headers Request headers.
+=======
      * @param array|null $headers Request headers.
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
      * @return Response Response of API request.
      */
     public function post($url, array $data, array $headers = null);

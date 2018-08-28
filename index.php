@@ -100,6 +100,7 @@ foreach ($events as $event) {
       'ボタン' . $i . '-' . 2, 'c-' . $i . '-' . 2));
     array_push($actionArray, new LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder (
       'ボタン' . $i . '-' . 3, 'c-' . $i . '-' . 3));
+
     // CarouselColumnTemplateBuilderの引数はタイトル、本文、
     // 画像URL、アクションの配列
     $column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder (

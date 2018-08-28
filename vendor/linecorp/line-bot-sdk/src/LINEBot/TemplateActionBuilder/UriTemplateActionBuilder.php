@@ -19,7 +19,10 @@
 namespace LINE\LINEBot\TemplateActionBuilder;
 
 use LINE\LINEBot\Constant\ActionType;
+<<<<<<< HEAD
+=======
 use LINE\LINEBot\Util\BuildUtil;
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
 use LINE\LINEBot\TemplateActionBuilder;
 
 /**
@@ -53,10 +56,18 @@ class UriTemplateActionBuilder implements TemplateActionBuilder
      */
     public function buildTemplateAction()
     {
+<<<<<<< HEAD
+        return [
+            'type' => ActionType::URI,
+            'label' => $this->label,
+            'uri' => $this->uri,
+        ];
+=======
         return BuildUtil::removeNullElements([
             'type' => ActionType::URI,
             'label' => $this->label,
             'uri' => $this->uri,
         ]);
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
     }
 }

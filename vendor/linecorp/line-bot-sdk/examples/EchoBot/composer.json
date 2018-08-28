@@ -1,4 +1,15 @@
 {
+<<<<<<< HEAD
+  "license": "Apache License, Version 2.0",
+  "authors": [
+    {
+      "name": "moznion",
+      "email": "moznion@gmail.com"
+    },
+    {
+      "name": "Satoru Yoshihara",
+      "email": "vaduz0@gmail.com"
+=======
   "license": "Apache-2.0",
   "authors": [
     {
@@ -15,6 +26,7 @@
       "name": "Satoshi Shibuya",
       "email": "satosby@gmail.com",
 	  "role": "Maintainer"
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
     }
   ],
   "require": {

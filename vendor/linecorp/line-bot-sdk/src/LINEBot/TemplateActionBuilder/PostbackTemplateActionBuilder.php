@@ -33,13 +33,26 @@ class PostbackTemplateActionBuilder implements TemplateActionBuilder
     /** @var string */
     private $data;
     /** @var string|null */
+<<<<<<< HEAD
+    private $text;
+=======
     private $displayText;
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
 
     /**
      * PostbackAction constructor.
      *
      * @param string $label Label of action.
      * @param string $data Data of postback.
+<<<<<<< HEAD
+     * @param string|null $text The text which will be sent when action is executed (optional).
+     */
+    public function __construct($label, $data, $text = null)
+    {
+        $this->label = $label;
+        $this->data = $data;
+        $this->text = $text;
+=======
      * @param string|null $displayText The text which will be sent when action is executed (optional).
      */
     public function __construct($label, $data, $displayText = null)
@@ -47,6 +60,7 @@ class PostbackTemplateActionBuilder implements TemplateActionBuilder
         $this->label = $label;
         $this->data = $data;
         $this->displayText = $displayText;
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
     }
 
     /**
@@ -62,9 +76,15 @@ class PostbackTemplateActionBuilder implements TemplateActionBuilder
             'data' => $this->data,
         ];
 
+<<<<<<< HEAD
+        if (isset($this->text)) {
+            // If text is set, append extend field.
+            $action['text'] = $this->text;
+=======
         if (isset($this->displayText)) {
             // If text is set, append extend field.
             $action['displayText'] = $this->displayText;
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
         }
 
         return $action;

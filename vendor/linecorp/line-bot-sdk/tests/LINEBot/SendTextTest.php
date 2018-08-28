@@ -21,9 +21,12 @@ namespace LINE\Tests\LINEBot;
 use LINE\LINEBot;
 use LINE\LINEBot\Constant\MessageType;
 use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
+<<<<<<< HEAD
+=======
 use LINE\LINEBot\QuickReplyBuilder\ButtonBuilder\QuickReplyButtonBuilder;
 use LINE\LINEBot\QuickReplyBuilder\QuickReplyMessageBuilder;
 use LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder;
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
 use LINE\Tests\LINEBot\Util\DummyHttpClient;
 use PHPUnit\Framework\TestCase;
 
@@ -153,6 +156,8 @@ class SendTextTest extends TestCase
         $this->assertTrue($res->isSucceeded());
         $this->assertEquals(200, $res->getJSONDecodedBody()['status']);
     }
+<<<<<<< HEAD
+=======
 
     public function testTextMessageWithQuickReply()
     {
@@ -191,4 +196,5 @@ class SendTextTest extends TestCase
         $this->assertTrue($res->isSucceeded());
         $this->assertEquals(200, $res->getJSONDecodedBody()['status']);
     }
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
 }

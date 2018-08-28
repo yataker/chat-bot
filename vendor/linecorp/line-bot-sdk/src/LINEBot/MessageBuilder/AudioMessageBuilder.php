@@ -20,7 +20,10 @@ namespace LINE\LINEBot\MessageBuilder;
 
 use LINE\LINEBot\Constant\MessageType;
 use LINE\LINEBot\MessageBuilder;
+<<<<<<< HEAD
+=======
 use LINE\LINEBot\QuickReplyBuilder;
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
 
 /**
  * A builder class for audio message.
@@ -31,6 +34,11 @@ class AudioMessageBuilder implements MessageBuilder
 {
     /** @var string */
     private $originalContentUrl;
+<<<<<<< HEAD
+    /** @var int */
+    private $duration;
+
+=======
 
     /** @var int */
     private $duration;
@@ -41,11 +49,23 @@ class AudioMessageBuilder implements MessageBuilder
     /** @var QuickReplyBuilder|null */
     private $quickReply;
 
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
     /**
      * AudioMessageBuilder constructor.
      *
      * @param string $originalContentUrl URL that serves audio file.
      * @param int $duration Duration of audio file (milli seconds)
+<<<<<<< HEAD
+     */
+    public function __construct($originalContentUrl, $duration)
+    {
+        $this->originalContentUrl = $originalContentUrl;
+        $this->duration = $duration;
+    }
+
+    /**
+     * Builds
+=======
      * @param QuickReplyBuilder|null $quickReply
      */
     public function __construct($originalContentUrl, $duration, QuickReplyBuilder $quickReply = null)
@@ -58,10 +78,20 @@ class AudioMessageBuilder implements MessageBuilder
     /**
      * Build audio message structure.
      *
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
      * @return array
      */
     public function buildMessage()
     {
+<<<<<<< HEAD
+        return [
+            [
+                'type' => MessageType::AUDIO,
+                'originalContentUrl' => $this->originalContentUrl,
+                'duration' => $this->duration,
+            ]
+        ];
+=======
         if (! empty($this->message)) {
             return $this->message;
         }
@@ -79,5 +109,6 @@ class AudioMessageBuilder implements MessageBuilder
         $this->message[] = $audioMessage;
 
         return $this->message;
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
     }
 }

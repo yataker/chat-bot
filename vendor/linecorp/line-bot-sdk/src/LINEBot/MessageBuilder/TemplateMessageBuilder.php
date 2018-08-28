@@ -20,7 +20,10 @@ namespace LINE\LINEBot\MessageBuilder;
 
 use LINE\LINEBot\Constant\MessageType;
 use LINE\LINEBot\MessageBuilder;
+<<<<<<< HEAD
+=======
 use LINE\LINEBot\QuickReplyBuilder;
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
 
 /**
  * A builder class for template message.
@@ -31,6 +34,20 @@ class TemplateMessageBuilder implements MessageBuilder
 {
     /** @var string */
     private $altText;
+<<<<<<< HEAD
+    /** @var TemplateBuilder */
+    private $templateBuilder;
+
+    /**
+     * TemplateMessageBuilder constructor.
+     * @param string $altText
+     * @param TemplateBuilder $templateBuilder
+     */
+    public function __construct($altText, TemplateBuilder $templateBuilder)
+    {
+        $this->altText = $altText;
+        $this->templateBuilder = $templateBuilder;
+=======
 
     /** @var TemplateBuilder */
     private $templateBuilder;
@@ -55,6 +72,7 @@ class TemplateMessageBuilder implements MessageBuilder
         $this->altText = $altText;
         $this->templateBuilder = $templateBuilder;
         $this->quickReply = $quickReply;
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
     }
 
     /**
@@ -64,6 +82,15 @@ class TemplateMessageBuilder implements MessageBuilder
      */
     public function buildMessage()
     {
+<<<<<<< HEAD
+        return [
+            [
+                'type' => MessageType::TEMPLATE,
+                'altText' => $this->altText,
+                'template' => $this->templateBuilder->buildTemplate(),
+            ]
+        ];
+=======
         if (! empty($this->message)) {
             return $this->message;
         }
@@ -81,5 +108,6 @@ class TemplateMessageBuilder implements MessageBuilder
         $this->message[] = $templateMessage;
 
         return $this->message;
+>>>>>>> 75a95f1f631f4d4d994b0a4c5e293a5b95c8d903
     }
 }
